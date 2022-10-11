@@ -39,15 +39,15 @@
         <Button Grid.Row="6" Grid.Column="1" x:Name="bnt_0" Click="bnt_num_Click">0</Button>
 
         <!-- Operations -->
-        <Button Grid.Row="1" Grid.Column="0" x:Name="bnt_min">min</Button>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="bnt_max">max</Button>
-        <Button Grid.Row="1" Grid.Column="2" x:Name="bnt_avg">avg</Button>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="bnt_min" Click="bnt_op_Click">min</Button>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="bnt_max" Click="bnt_op_Click">max</Button>
+        <Button Grid.Row="1" Grid.Column="2" x:Name="bnt_avg" Click="bnt_op_Click">avg</Button>
         <Button Grid.Row="1" Grid.Column="3" x:Name="bnt_pow">x^y</Button>
 
-        <Button Grid.Row="2" Grid.Column="3" x:Name="bnt_div">/</Button>
-        <Button Grid.Row="3" Grid.Column="3" x:Name="bnt_mult">*</Button>
-        <Button Grid.Row="4" Grid.Column="3" x:Name="bnt_minus" Click="bnt_minus_Click">-</Button>
-        <Button Grid.Row="5" Grid.Column="3" x:Name="bnt_plus" Click="bnt_plus_Click">+</Button>
+        <Button Grid.Row="2" Grid.Column="3" x:Name="bnt_div" Click="bnt_op_Click">/</Button>
+        <Button Grid.Row="3" Grid.Column="3" x:Name="bnt_mult" Click="bnt_op_Click">*</Button>
+        <Button Grid.Row="4" Grid.Column="3" x:Name="bnt_minus" Click="bnt_op_Click">-</Button>
+        <Button Grid.Row="5" Grid.Column="3" x:Name="bnt_plus" Click="bnt_op_Click">+</Button>
         <Button Grid.Row="6" Grid.Column="3" x:Name="bnt_eq" Click="bnt_eq_Click">=</Button>
 
         <Button Grid.Row="6" Grid.Column="2" x:Name="bnt_comma">,</Button>
@@ -56,7 +56,7 @@
         <!-- Clear buttons -->
         <Button Grid.Row="2" Grid.Column="0" x:Name="bnt_C">С</Button>
         <Button Grid.Row="2" Grid.Column="1" x:Name="bnt_CE">CE</Button>
-        <Button Grid.Row="2" Grid.Column="2" x:Name="bnt_backspace" Content="&lt;&lt;&lt;"></Button>
+        <Button Grid.Row="2" Grid.Column="2" x:Name="bnt_backspace">DEL</Button>
 
         <!-- Text box -->
         <TextBox Grid.Row="0" Grid.ColumnSpan="4" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="40" x:Name="txtValue">0</TextBox>
