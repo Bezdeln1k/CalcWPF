@@ -28,7 +28,7 @@ namespace CalcWPF
             InitializeComponent();
         }
 
-        private void bnt_num_Click(object sender, RoutedEventArgs e)
+        private void bnt_num_Click(object sender, RoutedEventArgs e) //Функция обработки числовых кнопок
         {
             Button button = (Button)sender;
             String str = button.Content.ToString();
@@ -38,7 +38,7 @@ namespace CalcWPF
             {
                 num1 = num1 * 10 + num;
                 txtValue.Text = num1.ToString();
-            }
+        }
             else
             {
                 num2 = num2 * 10 + num;
@@ -46,12 +46,13 @@ namespace CalcWPF
             }
         }
 
-        private void bnt_plus_Click(object sender, RoutedEventArgs e)
+        private void bnt_op_Click(object sender, RoutedEventArgs e) //Функция обработки кнопок операций
         {
-            op = "+";
+            Button button = (Button)sender;
+            op = button.Content.ToString();
         }
 
-        private void bnt_eq_Click(object sender, RoutedEventArgs e)
+        private void bnt_eq_Click(object sender, RoutedEventArgs e) //Кнопка "равно"
         {
             int result = 0;
             switch (op)
@@ -59,20 +60,23 @@ namespace CalcWPF
                 case "+":
                     result = num1 + num2;
                     break;
-            }
-
-            txtValue.Text = result.ToString();
-            op = "";
-            num1 = result;
-        }
-
-        private void bnt_minus_Click(object sender, RoutedEventArgs e)
-        {
-            int result = 0;
-            switch (op)
-            {
-                case "+":
+                case "-":
                     result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                case "max":
+                    result = Math.Max(num1, num2);
+                    break;
+                case "min":
+                    result = Math.Min(num1, num2);
+                    break;
+                case "avg":
+                    result = (num1 + num2) / 2;
                     break;
             }
 
