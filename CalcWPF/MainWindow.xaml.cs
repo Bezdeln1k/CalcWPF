@@ -108,5 +108,54 @@ namespace CalcWPF
             //}
             //return result;
         }
+
+        private void bnt_C_Click(object sender, RoutedEventArgs e)
+        {
+            num1 = 0;
+            num2 = 0;
+            op = "";
+            txtValue.Text = "0";
+        }
+
+        private void bnt_CE_Click(object sender, RoutedEventArgs e)     //CE - clean entry - обнуляет num1 либо num2, смотря что вводится
+        {
+            if (op == "")
+            {
+                num1 = 0;
+            }
+            else
+            {
+                num2 = 0;
+            }
+            txtValue.Text = "0";
+        }
+
+        private void bnt_backspace_Click(object sender, RoutedEventArgs e)
+        {
+            if (op == "")
+            {
+                num1 = num1 / 10;
+                txtValue.Text = num1.ToString();
+            }
+            else
+            {
+                num2 = num2 / 10;
+                txtValue.Text = num2.ToString();
+            }
+        }
+
+        private void bnt_plusminus_Click(object sender, RoutedEventArgs e) //переводит положительное число в отрицательное
+        {
+            if (op == "")
+            {
+                num1 *= -1;
+                txtValue.Text = num1.ToString();
+            }
+            else
+            {
+                num2 *= -1;
+                txtValue.Text = num2.ToString();
+            }
+        }
     }
 }

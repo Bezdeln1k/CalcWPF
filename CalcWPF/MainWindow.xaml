@@ -51,12 +51,12 @@
         <Button Grid.Row="6" Grid.Column="3" x:Name="bnt_eq" Click="bnt_eq_Click">=</Button>
 
         <Button Grid.Row="6" Grid.Column="2" x:Name="bnt_comma">,</Button>
-        <Button Grid.Row="6" Grid.Column="0" x:Name="bnt_plusminus">+/-</Button>
+        <Button Grid.Row="6" Grid.Column="0" x:Name="bnt_plusminus" Click="bnt_plusminus_Click">+/-</Button>
 
         <!-- Clear buttons -->
-        <Button Grid.Row="2" Grid.Column="0" x:Name="bnt_C">С</Button>
-        <Button Grid.Row="2" Grid.Column="1" x:Name="bnt_CE">CE</Button>
-        <Button Grid.Row="2" Grid.Column="2" x:Name="bnt_backspace">DEL</Button>
+        <Button Grid.Row="2" Grid.Column="0" x:Name="bnt_C" Click="bnt_C_Click">С</Button>
+        <Button Grid.Row="2" Grid.Column="1" x:Name="bnt_CE" Click="bnt_CE_Click">CE</Button>
+        <Button Grid.Row="2" Grid.Column="2" x:Name="bnt_backspace" Click="bnt_backspace_Click">DEL</Button>
 
         <!-- Text box -->
         <TextBox Grid.Row="0" Grid.ColumnSpan="4" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="40" x:Name="txtValue">0</TextBox>
