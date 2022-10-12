@@ -42,7 +42,7 @@
         <Button Grid.Row="1" Grid.Column="0" x:Name="bnt_min" Click="bnt_op_Click">min</Button>
         <Button Grid.Row="1" Grid.Column="1" x:Name="bnt_max" Click="bnt_op_Click">max</Button>
         <Button Grid.Row="1" Grid.Column="2" x:Name="bnt_avg" Click="bnt_op_Click">avg</Button>
-        <Button Grid.Row="1" Grid.Column="3" x:Name="bnt_pow">x^y</Button>
+        <Button Grid.Row="1" Grid.Column="3" x:Name="bnt_pow" Click="bnt_op_Click">x^y</Button>
 
         <Button Grid.Row="2" Grid.Column="3" x:Name="bnt_div" Click="bnt_op_Click">/</Button>
         <Button Grid.Row="3" Grid.Column="3" x:Name="bnt_mult" Click="bnt_op_Click">*</Button>

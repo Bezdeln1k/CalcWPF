@@ -78,11 +78,35 @@ namespace CalcWPF
                 case "avg":
                     result = (num1 + num2) / 2;
                     break;
+                case "x^y":
+                    result = Pow(num1, num2);
+                    break;
+                
             }
 
             txtValue.Text = result.ToString();
             op = "";
             num1 = result;
+        }
+
+        //x^4 = x * x * x * x = x^3 * x;
+        //x^3 = x * x * x = x^2 * x;
+        //x^2 = x * x = x^1 * x;
+        //x^1 = x = x^0 * x;
+        //x^0 = 1;
+        private int Pow(int x, int y)
+        {
+            if (y == 0)
+                return 1;
+
+            return Pow(x, y - 1) * x;
+
+            //int result = 1;                   //реализация возведения в степень через цикл
+            //for(int i = 1; i <= y; i++)
+            //{
+            //    result *= x;
+            //}
+            //return result;
         }
     }
 }
