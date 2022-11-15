@@ -20,8 +20,8 @@ namespace CalcWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        int num1 = 0;
-        int num2 = 0;
+        double num1 = 0;
+        double num2 = 0;
         string op = "";
         public MainWindow()
         {
@@ -54,7 +54,7 @@ namespace CalcWPF
 
         private void bnt_eq_Click(object sender, RoutedEventArgs e) //Кнопка "равно"
         {
-            int result = 0;
+            double result = 0;
             switch (op)
             {
                 case "+":
@@ -79,7 +79,7 @@ namespace CalcWPF
                     result = (num1 + num2) / 2;
                     break;
                 case "x^y":
-                    result = Pow(num1, num2);
+                    result = Pow(num1, (int) num2);
                     break;
                 
             }
@@ -87,6 +87,7 @@ namespace CalcWPF
             txtValue.Text = result.ToString();
             op = "";
             num1 = result;
+            num2 = 0;
         }
 
         //x^4 = x * x * x * x = x^3 * x;
@@ -94,7 +95,7 @@ namespace CalcWPF
         //x^2 = x * x = x^1 * x;
         //x^1 = x = x^0 * x;
         //x^0 = 1;
-        private int Pow(int x, int y)
+        private double Pow(double x, int y)
         {
             if (y == 0)
                 return 1;
