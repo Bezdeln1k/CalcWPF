@@ -31,18 +31,19 @@ namespace CalcWPF
         private void bnt_num_Click(object sender, RoutedEventArgs e) //Функция обработки числовых кнопок
         {
             Button button = (Button)sender;
-            String str = button.Content.ToString();
-            int num = Int32.Parse(str);
+            String num = button.Content.ToString();
+            if (txtValue.Text == "0")
+                txtValue.Text = num;
+            else
+                txtValue.Text += num;
 
             if(op == "")
             {
-                num1 = num1 * 10 + num;
-                txtValue.Text = num1.ToString();
-        }
+                num1 = Double.Parse(txtValue.Text);
+            }
             else
             {
-                num2 = num2 * 10 + num;
-                txtValue.Text = num2.ToString();
+                num2 = Double.Parse(txtValue.Text);
             }
         }
 
@@ -50,6 +51,7 @@ namespace CalcWPF
         {
             Button button = (Button)sender;
             op = button.Content.ToString();
+            txtValue.Text = "0";
         }
 
         private void bnt_eq_Click(object sender, RoutedEventArgs e) //Кнопка "равно"
@@ -133,16 +135,29 @@ namespace CalcWPF
 
         private void bnt_backspace_Click(object sender, RoutedEventArgs e)
         {
+            txtValue.Text = DropLastChar(txtValue.Text);
             if (op == "")
             {
-                num1 = num1 / 10;
-                txtValue.Text = num1.ToString();
+                num1 = Double.Parse(txtValue.Text);
             }
             else
             {
-                num2 = num2 / 10;
-                txtValue.Text = num2.ToString();
+                num2 = Double.Parse(txtValue.Text);
             }
+        }
+
+        private string DropLastChar(string text)
+        {
+            if (text.Length == 1)
+                text = "0";
+            else
+            {
+                text = text.Remove(text.Length - 1, 1);
+                if (text[text.Length - 1] == ',')
+                    text = text.Remove(text.Length - 1, 1);
+            }
+
+            return text;
         }
 
         private void bnt_plusminus_Click(object sender, RoutedEventArgs e) //переводит положительное число в отрицательное
@@ -157,6 +172,24 @@ namespace CalcWPF
                 num2 *= -1;
                 txtValue.Text = num2.ToString();
             }
+        }
+
+        private void bnt_comma_Click(object sender, RoutedEventArgs e)
+        {
+            if (op == "")
+                SetComma(num1);
+            else
+                SetComma(num2);
+
+        }
+
+        private void SetComma(double num1) //Ф-я нажатия запятой и проверки повторных нажатий
+        {
+
+            if (txtValue.Text.Contains(','))
+                return;
+
+            txtValue.Text += ',';
         }
     }
 }
