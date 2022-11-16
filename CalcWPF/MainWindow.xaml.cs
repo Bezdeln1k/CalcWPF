@@ -28,7 +28,7 @@ namespace CalcWPF
             InitializeComponent();
         }
 
-        private void bnt_num_Click(object sender, RoutedEventArgs e) //Функция обработки числовых кнопок
+        private void btn_num_Click(object sender, RoutedEventArgs e) //Функция обработки числовых кнопок
         {
             Button button = (Button)sender;
             String num = button.Content.ToString();
@@ -47,14 +47,14 @@ namespace CalcWPF
             }
         }
 
-        private void bnt_op_Click(object sender, RoutedEventArgs e) //Функция обработки кнопок операций
+        private void btn_op_Click(object sender, RoutedEventArgs e) //Функция обработки кнопок операций
         {
             Button button = (Button)sender;
             op = button.Content.ToString();
             txtValue.Text = "0";
         }
 
-        private void bnt_eq_Click(object sender, RoutedEventArgs e) //Кнопка "равно"
+        private void btn_eq_Click(object sender, RoutedEventArgs e) //Кнопка "равно"
         {
             double result = 0;
             switch (op)
@@ -112,7 +112,7 @@ namespace CalcWPF
             //return result;
         }
 
-        private void bnt_C_Click(object sender, RoutedEventArgs e)
+        private void btn_C_Click(object sender, RoutedEventArgs e)
         {
             num1 = 0;
             num2 = 0;
@@ -120,7 +120,7 @@ namespace CalcWPF
             txtValue.Text = "0";
         }
 
-        private void bnt_CE_Click(object sender, RoutedEventArgs e)     //CE - clean entry - обнуляет num1 либо num2, смотря что вводится
+        private void btn_CE_Click(object sender, RoutedEventArgs e)     //CE - clean entry - обнуляет num1 либо num2, смотря что вводится
         {
             if (op == "")
             {
@@ -133,7 +133,7 @@ namespace CalcWPF
             txtValue.Text = "0";
         }
 
-        private void bnt_backspace_Click(object sender, RoutedEventArgs e)
+        private void btn_backspace_Click(object sender, RoutedEventArgs e)
         {
             txtValue.Text = DropLastChar(txtValue.Text);
             if (op == "")
@@ -160,7 +160,7 @@ namespace CalcWPF
             return text;
         }
 
-        private void bnt_plusminus_Click(object sender, RoutedEventArgs e) //переводит положительное число в отрицательное
+        private void btn_plusminus_Click(object sender, RoutedEventArgs e) //переводит положительное число в отрицательное
         {
             if (op == "")
             {
@@ -174,7 +174,7 @@ namespace CalcWPF
             }
         }
 
-        private void bnt_comma_Click(object sender, RoutedEventArgs e)
+        private void btn_comma_Click(object sender, RoutedEventArgs e)
         {
             if (op == "")
                 SetComma(num1);
